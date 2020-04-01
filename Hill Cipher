@@ -17,7 +17,7 @@ for i in range(0,26):
 key = create_matrix(2,2,0)
 for m in range(0,2):
   for n in range (0,2):
-    key[m][n] = int(input(f"Ingrese el elemento {n} de la {m} fila de la llave (KEY): "))
+    key[m][n] = int(input(f"Input the {n} element of the {m} row of the key (KEY): "))
 
 print("\n")
 print("KEY: ")
@@ -51,7 +51,7 @@ def MIM(mx):
   return Ki
 
 def encrypt():
-  message = str(input("Ingrese el mensaje a encriptar: "))
+  message = str(input("Input the plain text: "))
   message = message.upper()
   message = message.replace(" ","")
 
@@ -74,10 +74,29 @@ def encrypt():
 
 def decrypt():
   inv = MIM(key)
+  print("Inverse matrix (Key -1):\n",inv)
+
+  message = str(input("Input the cipher text: "))
+  message = message.upper()
+  message = message.replace(" ","")
+
+  print("CIPHER TEXT: ",message)
+
+  print("PLAIN TEXT: ",end='  ')
+  for i in range (0,len(message),2):
+    locA = locindex(message[i])
+    locB = locindex(message[i+1])
+    A = locA[1] * inv[0][0]
+    B = locB[1] * inv[1][0]
+    C = locA[1] * inv[0][1]
+    D = locB[1] * inv[1][1]
+    plainA = ((A+B)%26)
+    plainB = ((C+D)%26)
+    print("{}{}".format(chr(65+plainA),chr(65+plainB)),end='')
 
 e = 1    
 while(e == 1):
-    print("\n\nElija la acción a realizar:")
+    print("\n\nChoose an action to realize:")
     choice=int(input("\n 1.Encrytion \n 2.Decryption \n 3.Exit\n"))
     print("\n")
 
@@ -88,4 +107,4 @@ while(e == 1):
     elif choice==3:
         e = 0
     else:
-        print("Elija una opcion correcta\n")  
+        print("Choose a correct answer\n")  
