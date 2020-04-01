@@ -1,8 +1,6 @@
 #@Santiago Mahecha Pinzón
 #smahechap@unal.edu.co
 
-import numpy as np
-
 print("-------------------------------------------------------HILL CIPHER ALGORITHM----------------------------------------------------------\n")
 
 def create_matrix(rows,columns,initial):
