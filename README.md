@@ -5,4 +5,4 @@ Cipher exercises made on Python:
 * Vigenère Cipher
 * Hill Cipher
 * Turning Grille Cipher
-* DES(Data Encryption Standard)
+* DES (Data Encryption Standard)
