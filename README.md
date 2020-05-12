@@ -6,3 +6,4 @@ Cipher exercises made on Python:
 * Hill Cipher
 * Turning Grille Cipher
 * DES (Data Encryption Standard)
+* AES (Advanced Encryption Standard)
